@@ -1,0 +1,18 @@
+section
+  header
+    h1= @document.title
+
+  nav
+    = link_to 'Back to index', root_path
+
+  #document-show
+    .document-body
+      = simple_format @document.body
+    footer
+      .document-created-at
+        | Created: #{@document.created_at}
+      .document-updated-at
+        | Updated: #{@document.updated_at}
+
+    nav
+      = link_to 'Back to index', root_path

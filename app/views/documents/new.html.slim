@@ -1,0 +1,15 @@
+section
+  header
+    h1 Documents#new
+
+  #documents-new
+    = form_with model: @document do |f|
+      .form-group
+        = f.label :title
+        = f.text_field :title
+      .form-group
+        = f.label :body
+        = f.text_area :body
+
+      .form-action
+        = f.button "Submit", type: "submit"
