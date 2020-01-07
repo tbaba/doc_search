@@ -3,8 +3,12 @@
 class DocumentsController < ApplicationController
   permits :title, :body
 
-  def index
-    @documents = Document.all
+  def index(freeword: nil)
+    @documents = if freeword
+                   Document.search(freeword).records
+                 else
+                   Document.all
+                 end
   end
 
   def show(id)

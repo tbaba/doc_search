@@ -2,6 +2,14 @@ section
   header
     h1 Documents#index
 
+  #documents-search-box
+    = form_with url: root_path, data: { remote: false }, method: :get do |f|
+      .form-group
+        = f.label :freeword, 'フリーワード'
+        = f.text_field :freeword, value: params[:freeword]
+      .form-action
+        = f.button '検索する', type: 'submit'
+
   #documents-index
     - @documents.each do |document|
       article id=dom_id(document)
