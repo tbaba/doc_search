@@ -64,3 +64,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Use elasticsearch to integrate ruby/rails with Elasticsearch
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
+
+gem 'action_args'
