@@ -6,9 +6,11 @@ volumes:
 
 services:
   es:
-    image: elasticsearch:7.5.1
+    build: es
     ports:
       - "9200:9200"
+    expose:
+      - 9300
     volumes:
       - es-data:/usr/share/elasticsearch/data
     ulimits:
