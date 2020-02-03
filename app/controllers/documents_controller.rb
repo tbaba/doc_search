@@ -5,7 +5,7 @@ class DocumentsController < ApplicationController
 
   def index(freeword: nil)
     @documents = if freeword
-                   Document.search(freeword).records
+                   Document.search(freeword)
                  else
                    Document.all
                  end

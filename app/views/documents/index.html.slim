@@ -12,9 +12,11 @@ section
 
   #documents-index
     - @documents.each do |document|
-      article id=dom_id(document)
+      article id="document_#{document.id}"
         header
           h2= document.title
+        - if document.respond_to?(:_score)
+          | スコア: #{document._score}
         .document-body
           = simple_format truncate(document.body, length: 200)
         footer
